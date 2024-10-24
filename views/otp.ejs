@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <%- include("nav") %>
+        <section id="lform">
+            <div class="container">
+                <form action="/user/verify" method="post">
+                    <h1>OTP Verify</h1>
+                    <input type="text" name="otp" placeholder="Enter Your OTP">
+                    <button id="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+        <!-- footer section  -->
+        <%- include("footer") %>
+</body>
+
+</html>

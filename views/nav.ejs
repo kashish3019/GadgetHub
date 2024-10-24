@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>header</title>
+  <link rel="stylesheet" href="/all.min.css">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <ul class="row2  align-item-center justify-between">
+          <div class="header-image">
+            <h2><a href="/product/home"><img src="/img/GADGET-removebg-preview.png" alt=""></a></h2>
+          </div>
+          <li><a href="/product/home">HOME</a></li>
+          <li><a href="/product/shop">SHOP</a></li>
+          <li><a href="/product/productpage">PRODUCT</a></li>
+          <li><a href="/user/signup">SIGNUP</a></li>
+          <li><a href="/user/login">SIGNIN</a></li>
+          <li><a href="/product/cart"><i class="fa-solid fa-bag-shopping"></i></a></li>
+          <li><a href="/product/getuser"><i class="fa-solid fa-user"></i></a></li>
+          <li><a href="/user/logout" onclick="confirmLogout()"><i class="fa-solid fa-user-minus"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+</body>
+<!-- logout js -->
+<script>
+  function confirmLogout() {
+    const userConfirmed = confirm("Are you sure you want to logout?");
+    if (userConfirmed) {
+      window.location.href = "/user/logout";
+    } else {
+      return false;
+    }
+  }
+</script>
+
+</html>

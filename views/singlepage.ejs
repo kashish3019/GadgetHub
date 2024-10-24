@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>singlepage</title>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <%- include('nav') %>
+    <div class="container">
+      <div class="single-img single-row">
+        <div class="w-50">
+          <img id="img" src=" <%= singlepage.img %> " alt="" />
+        </div>
+        <div class="w-50">
+          <div class="single-content">
+                       <div class="s-icon">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                       </div><br>
+            <h3 id="title"><%= singlepage.title %></h3><br>
+            <span id="price">₹<%= singlepage.price %></span><br><br>
+            <h5><span>Availability :</span> In Stock  <i class="fa-solid fa-check"></i></h5><br>
+            <h5><span>Colour :</span> All colour Available</h5><br>
+            <h4>Hurry up! only 66 products left in stock</h4><br>
+            <p id="desc"><span>Product info :<br><br></span><%= singlepage.desc %></p>
+            <button id="singlebtn" >Add to Cart</button>
+            <span id="id"><%= singlepage.id %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const handlecart = (id) => {
+      console.log(id);
+      fetch("/product/cart", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ productID: id }),
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+    };
+
+    document.getElementById("singlebtn").addEventListener("click", () => {
+        let id=document.getElementById("id").innerHTML
+      handlecart(id);
+
+      alert("Product added Successfully");
+    });
+  </script>
+</html>

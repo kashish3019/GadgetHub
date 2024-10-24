@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>productpage</title>  
+</head>
+<body>
+    <%- include('nav') %>
+        <form action="/product/productpage" method="post" id="pform">
+            <h1 id="addproduct">Add Product</h1>
+            <label>Image : </label><br>
+            <input type="url" name="img" id="img"><br>
+            <label>Title :</label><br>
+            <input type="text" name="title" id="title"><br>
+            <label>Price :</label> <br>
+            <input type="number" name="price" id="price"><br>
+            <label>Description :</label> <br>
+            <input type="text" name="desc" id="desc"><br>
+            <label>Category :</label> <br>
+            <select name="category" id="category">
+                <option value="allProduct">AllProduct</option>
+                <option value="mobile">Mobiles</option>
+                <option value="earbuds">Earbuds</option>
+                <option value="smartwatch">smartwatch</option>
+                <option value="notebook">Notebook</option>
+                <option value="camera">camera</option>
+                <option value="headphones">Headphones</option>
+                <option value="other">other</option>
+            </select><br>
+            <label>Size :</label> <br>
+            <input type="text" name="size" id="size">
+            <div class="pbtn">
+                <button value="submit">submit</button>
+          </form>
+</body>
+</html>

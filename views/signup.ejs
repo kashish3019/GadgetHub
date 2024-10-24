@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="/css/index.css">
+
+<body>
+    <%- include('nav') %>
+        <div class="container">
+            <div class="main-signup">
+                <div class="signup-img w-50">
+                    <img src="/img/6368592.jpg" alt="">
+                </div>
+                <form action="/user/signup" method="post" id="sform" class="w-50">
+                    <h1>Create Account</h1>
+                    <div class="main-form">
+                        <label>Username </label><br>
+                        <input type="text" name="username" id="username" placeholder="Enter your name" required><br>
+                        <label>Email </label><br>
+                        <input type="text" name="email" id="email" placeholder="abc@gmail.com" required><br>
+                        <label>Password </label> <br>
+                        <input type="text" name="password" id="password" placeholder="At least 6 characters"
+                            required><br><br>
+                        <div class="SelectionButton">
+                            <select name="role" id="role">
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                            <button type="submit" class="Signupbtn">SIGNUP</button>
+                        </div>
+                        <p id="p">Already have an account ? <a href="/user/login">Sign In</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <%- include('footer') %>
+</body>
+
+</html>

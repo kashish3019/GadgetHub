@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cart</title>
+  </head>
+  <style>
+    .content-div{
+      width: 70%;
+    } 
+    img {
+     
+      margin-left: 30px;
+      margin-top: 20px;
+      border: 1px solid rgba(119, 118, 118, 0.278);
+      
+      }
+      .pricebtn{
+        margin-left:20px ;
+      }
+      #box h2{
+        font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+       margin-left: 50px;
+       font-weight: 500;
+       padding: 5px;
+       font-size: 18px;
+       color: rgb(68, 66, 66);
+       margin-top: 50px;
+       
+      }
+      #box h3{
+        font-family: sans-serif;
+       margin-left: 50px;
+       font-size: 16px;
+       padding: 5px;
+       font-weight: 500;
+       color: rgb(144, 139, 139);
+       margin-top: 5px;
+       
+      }
+       #box >div {
+        display: flex;
+       }
+       /* button{
+        margin-left: 90px;
+       } */
+       .cart h1{
+        margin-top: 20px;
+        font-size: 30px;
+        color: rgb(54, 53, 53);
+        padding: 20px;
+        font-weight: 500;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin-left: 50px;
+       }
+       .cartbtn2{
+       margin-left: 150px;
+       margin-top:60px;
+       border-radius: 0px;
+      background-color: transparent;
+      color: rgb(92, 91, 91);
+      border: 1px solid rgb(138, 137, 137);
+       }
+       .cartbtn1{
+       margin-left: 30px;
+       border-radius: 0px;
+       margin-top:60px;
+      background-color: transparent;
+      color: rgb(92, 91, 91);
+      border: 1px solid rgb(138, 137, 137);
+       }
+       .cartqty{
+        border-radius: 0px;
+       margin-left: 30px;
+       margin-top:60px;
+      background-color: transparent;
+      color: rgb(92, 91, 91);
+      border: 1px solid rgb(138, 137, 137);
+       }
+      
+  </style>
+  <body>
+    <%- include('nav') %>
+   <div class="container">
+     <div class="cart">
+      <h1>My cart :</h1>
+      <div id="srch"></div>
+     </div>
+      <div id="box"></div>
+    </div>
+    <!-- <div id="box1"></div> -->
+   </div>
+   <%- include('footer') %>
+  </body>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+      const updateQty = (id, qty) => {
+    fetch(`/product/cart/update/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ qty })
+    })
+        .then((res) => res.json())
+        .then((response) => get())
+        .catch((err) => console.log(err))
+}
+
+const handlePayment = async (amount) => {
+    let res = await fetch("/product/payment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ amount: amount })
+    })
+    let order = await res.json()
+    console.log(order);
+    let options = {key: "rzp_test_7Grqtls4UrZJlU", amount: order.amount }
+    let razorpay = new Razorpay(options)
+    razorpay.open()
+}
+      const display = (data) => {
+        let totalprice=0
+      document.getElementById("box").innerHTML = "";
+      // document.getElementById("box1").innerHTML = "";
+      data.map((element) => {
+        let ele=element.productID
+        console.log(ele);
+        totalprice += ele.price * element.qty
+        let img = document.createElement("img");
+        img.src = ele.img;
+        img.style.width = "150px";
+        img.style.height = "150px";
+        let title = document.createElement("h2");
+        title.innerHTML = ele.title;
+        let price = document.createElement("h3");
+        price.innerHTML = `₹${ele.price}`;
+        let btn2 = document.createElement("button");
+        btn2.innerHTML = "+";
+        btn2.setAttribute("class", "cartbtn2");
+        btn2.addEventListener("click", () => updateQty(element._id, +1));
+        let btn1 = document.createElement("button");
+        btn1.innerHTML = "-";
+        btn1.setAttribute("class", "cartbtn1");
+        btn1.addEventListener("click", () => updateQty(element._id, -1));
+        let qty = document.createElement("button");
+        qty.innerHTML = `QTY ${element.qty}`;
+        qty.setAttribute("class", "cartqty");
+        let div = document.createElement("div");
+        div.append(img);
+      document.getElementById("box").append(div);
+      let div2 = document.createElement("div");
+        div2.append(title, price);
+        document.getElementById("box").append(div2);
+        let div4 = document.createElement("div");
+        div4.append(btn2,qty,btn1);
+        document.getElementById("box").append(div4);
+        let div3 = document.createElement("div");
+        div3.append(div,div2,div4);
+        document.getElementById("box").append(div3);
+      });
+
+      let priceBtn = document.createElement("button")
+    priceBtn.innerHTML = `Total Price: ₹ ${totalprice}`
+    document.getElementById("box").append(priceBtn)
+    priceBtn.setAttribute("class", "pricebtn");
+    priceBtn.addEventListener("click", () => handlePayment(totalprice))
+    };
+
+    const get=async () => {
+    fetch("/product/cartfind")
+        .then((response) => response.json())
+        .then((response) => display(response))
+        .catch((error) => console.log(error));
+}
+get()
+  </script>
+</html>

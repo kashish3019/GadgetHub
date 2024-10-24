@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>img</title>
+</head>
+<body>
+    <form action="/user/img/upload" method="post" enctype="multipart/form-data" id="form">
+        <input type="file" name="" id="img">
+        <input type="submit" name="submit">
+    </form>
+</body>
+<script>
+    document.getElementById("form").addEventListener("submit",(e)=>{
+        e.preventDefault()
+        let formdata = new FormData()
+        formdata.append("img",document.getElementById("img").files[0])
+        fetch("/user/img/upload",{
+            method : "POST",
+            body : formdata
+        })
+    })
+</script>
+</html>

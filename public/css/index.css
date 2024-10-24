@@ -1,0 +1,1065 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+}
+
+header {
+  box-shadow: 0px 0px 30px rgba(84, 83, 83, 0.2);
+  background-color: #2a2929;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+ul li {
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+}
+
+ul li a {
+  color: rgb(255, 255, 255);
+}
+
+.align-item-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: right;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#addproduct {
+  color: brown;
+}
+
+.header-image img {
+  width: 30%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row2 {
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+
+#pform {
+  /* width: 500px;  */
+  padding: 50px;
+  width: 600px;
+  margin: auto;
+}
+
+.box {
+  text-align: center;
+  align-items: center;
+}
+
+/* login css */
+.main-form {
+  margin-top: 40px;
+}
+
+.box-btn {
+  text-align: center;
+
+}
+
+.forgetButton {
+  color: rgb(111, 109, 109);
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+}
+
+.content {
+  display: flex;
+  margin: 30px;
+  text-align: center;
+}
+
+#lform input {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  color: #6f6f6f;
+  border: 1px solid #bcbbbb;
+}
+
+#lform {
+  padding: 50px;
+  width: 600px;
+  margin: auto;
+}
+
+#sform input {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  color: #6f6f6f;
+  border: 1px solid #bcbbbb;
+}
+
+#sform {
+  padding: 50px;
+  width: 600px;
+  margin: auto;
+}
+
+#sform h1 {
+  text-align: center;
+}
+
+#pform input {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  color: #6f6f6f;
+  border: 1px solid #bcbbbb;
+}
+
+label {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  color: rgba(101, 100, 100, 0.873);
+}
+
+button {
+  padding: 10px 20px;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  background-color: #2a2929;
+  transition: all 0.2s;
+  margin-top: 20px;
+  border-radius: 5px;
+
+}
+
+.user-profile {
+  padding-bottom: 25px;
+}
+
+.user-profile button {
+  display: block;
+  margin: 0 auto;
+}
+
+.ubtn {
+  padding: 10px 20px;
+  background-color: brown;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  transition: all 0.2s;
+  margin: 20px;
+  margin-left: 80px;
+  border-radius: 5px;
+}
+
+.ubtn:hover {
+  background-color: rgba(114, 9, 9, 0.881);
+  color: rgb(255, 255, 255);
+}
+.SelectionButton{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+}
+.Signupbtn{
+  background-color: #2a2929;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  transition: all 0.2s;
+  margin: 0px;
+}
+.btn {
+  padding: 10px 50px;
+  background-color: #2a2929;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  transition: all 0.2s;
+  margin: 0px;
+  margin-left: 190px;
+  border-radius: 5px;
+}
+.main-signup .main-form #p{
+  width:100%;
+}
+.lbtn {
+  background-color: #2a2929;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  width: 100%;
+  margin-top:0px ;
+}
+
+#lform h1 {
+  text-align: center;
+
+}
+
+form .pbtn button {
+  width: 100%;
+  margin-right: 20px;
+}
+
+#p {
+  width: 400px;
+  height: 50px;
+  background-color: #2a2929;
+  color: rgb(255, 255, 255);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  padding-top: 10px;
+  border-radius: 5px;
+}
+
+#p a {
+
+  color: rgb(192, 188, 188);
+  /* font-size: 20px; */
+  border-bottom: 1px solid rgb(176, 174, 174);
+  font-size: 15px;
+}
+
+/* singup */
+#role {
+  text-align: center;
+  padding: 8px 40px;
+  /* margin-left: 220px; */
+  border-color: rgb(0, 0, 0);
+}
+
+span {
+  color: black;
+}
+
+form #category {
+  padding: 10px 20px;
+  margin: 10px 0px 20px 0px;
+  border: 1px solid #bcbbbb;
+  border-radius: 5px;
+  width: 100%;
+}
+
+#addproduct {
+  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+  margin-bottom: 30px;
+  text-align: center;
+  color: #2a2929;
+}
+
+#srch input {
+  /* margin-top: 30px; */
+  border: none;
+  outline: none;
+  /* border: 20px saddlebrown; */
+}
+
+#srch i {
+  font-size: 15px;
+  color: grey;
+  padding: 5px;
+}
+
+#srch {
+  border-bottom: 1px solid #a29e9ea5;
+}
+
+.cart,
+.user {
+  font-size: 20px;
+}
+
+/* banner */
+.banner-img {
+  position: relative;
+}
+
+.banner-img img {
+  width: 100%;
+  background-repeat: no-repeat;
+
+}
+
+.overlay {
+  width: 100%;
+  height: 99.5%;
+  top: 0;
+  position: absolute;
+  background-color: #25252588;
+}
+
+.banner-content {
+  position: absolute;
+  top: 0;
+  left: 40%;
+  text-align: center;
+  /* line-height: 200; */
+}
+
+.shopbtn button {
+  background-color: #f9bb00;
+  border-radius: 0px;
+  border: none;
+}
+
+.shopbtn button a {
+  color: rgb(37, 37, 37);
+  font-weight: 400;
+}
+
+.img-pro {
+  margin-top: 50px;
+}
+
+.gellary {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gellary:hover img {
+  transform: scale(1.1);
+}
+
+.img-text {
+  position: absolute;
+  /* left: 10%; */
+  right: 15%;
+  bottom: 30%;
+}
+
+.img-text h1 {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+
+.img-text a {
+  border-bottom: 1px solid black;
+  color: rgb(35, 34, 34);
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.banner-content h2 {
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  padding: 0 15px;
+  letter-spacing: 2px;
+  padding-top: 150px;
+  margin-left: 25 px;
+  font-weight: 500;
+}
+
+.banner-content span {
+  color: rgb(255, 255, 255);
+}
+
+.text-center1 {
+  width: 230px;
+  margin: auto;
+  font-size: 30px;
+  color: rgb(108, 10, 10);
+  font-family: sans-serif;
+  margin-top: 50px;
+  border-bottom: 2px solid rgb(108, 10, 10);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-center2 {
+  text-align: center;
+  margin: auto;
+  margin-bottom: 30px;
+  padding-left: 80px;
+  font-weight: 500;
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  font-family: sans-serif;
+  margin-top: 50px;
+}
+
+.w-50 {
+  width: 50%;
+  padding: 10px;
+}
+
+.w-10 {
+  width: 10%;
+}
+
+.w-25 {
+  width: 25%;
+  padding: 10px;
+}
+
+.w-33 {
+  width: 33%;
+  padding: 10px;
+}
+
+.w-30 {
+  width: 30%;
+  margin: 20px;
+}
+
+.backtotop {
+  width: 50px;
+  border-radius: 100%;
+  background-color: #2a2929;
+  height: 50px;
+  color: white;
+  text-align: center;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  transition: all 0.5s;
+
+}
+
+.backtotop i {
+  line-height: 50px;
+}
+
+.backtotop:hover {
+  background-color: rgb(63, 63, 63);
+}
+
+.img-pro img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+
+
+.img-content {
+  margin-left: 80px;
+  font-family: sans-serif;
+  margin-top: 20px;
+
+}
+
+.img-content .p {
+  margin-bottom: 10px;
+  border-color: blue;
+}
+
+.img-content h2 {
+  padding-bottom: 30px;
+  font-size: 20px;
+}
+
+.padding {
+  padding-top: 100px;
+}
+
+.view-btn {
+  background-color: #2a2929;
+
+}
+
+.view-btn a {
+  color: white;
+}
+
+.view-more {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.shop-content {
+  text-align: center;
+  font-family: sans-serif;
+  /* background-color: #2d2a26; */
+  margin-top: 80px;
+}
+
+.shop-content p {
+  text-align: start;
+  margin-top: 40px;
+  margin-left: 20px;
+  letter-spacing: 2px;
+  color: rgb(103, 101, 101);
+
+}
+
+.shop-img {
+  margin-bottom: 40px;
+}
+
+.w-10 img {
+  width: 50%;
+  height: 20%;
+  margin-top: 50px;
+  margin-left: 30px;
+
+}
+
+.view-content {
+  font-family: sans-serif;
+  margin-left: 20px;
+  margin-bottom: 100px;
+}
+
+.view-content h3 {
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
+.view-content p {
+  padding-left: 10px;
+  color: grey;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.forgot-form h1 {
+  font-family: sans-serif;
+  color: brown;
+}
+
+/* single page */
+#single {
+  border: none;
+}
+
+.single-img img {
+  margin-top: 20px;
+  width: 70%;
+}
+
+.single-row {
+  display: flex;
+}
+
+.single-content {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.single-content #id {
+  display: none;
+}
+
+.single-content h3 {
+  font-family: sans-serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+  color: #2a2929;
+  font-weight: 500;
+}
+
+.single-content #price {
+  font-size: 20px;
+  font-family: sans-serif;
+  color: red;
+}
+
+.single-content p {
+  font-size: 18px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #6f6f6f;
+  word-spacing: 3px;
+}
+
+.single-content .s-icon i {
+  color: #f9bb00;
+}
+
+.single-content h4 {
+  font-size: 18px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: rgb(2, 128, 2);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.single-content h5 {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(4, 139, 4);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.single-content p span {
+  font-size: 20px;
+  color: #494646;
+  font-weight: 600;
+  border-bottom: 2px solid rgb(39, 39, 39);
+}
+
+
+
+/* .trending-product */
+.trending-product img {
+  width: 100%;
+
+}
+
+.trending-products {
+  margin-top: 330px;
+}
+
+.trending-product p {
+  margin-left: 110px;
+  letter-spacing: 1px;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: 600;
+  margin-top: 10px;
+  color: rgb(34, 33, 33);
+}
+
+.trending-product h4 {
+  margin-left: 70px;
+  letter-spacing: 1px;
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: 500;
+  margin-top: 20px;
+  color: rgb(34, 33, 33);
+}
+
+.tr-icon i {
+  color: #f9bb00;
+}
+
+.tr-icon {
+  margin-left: 90px;
+  margin-top: 10px;
+}
+
+/* counter */
+
+.counter-bg {
+  background-image: url(../img/counter-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #00000009;
+  margin-top: 30px;
+  padding-bottom: 110px;
+}
+
+.counter-content {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.counter-content h1 {
+  font-size: 45px;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+.counter-content p {
+  color: gray;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.sedual {
+
+  color: rgb(95, 94, 94);
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.counter-main .w-50 img {
+  width: 90%;
+  margin-top: 100px;
+}
+
+
+.count {
+  margin-left: 100px;
+}
+
+#counter,
+#counter1,
+#counter2,
+#counter3 {
+  width: 80px;
+  height: 80px;
+  font-size: 25px;
+  text-align: center;
+  text-align: center;
+  border-radius: 100%;
+  padding-top: 25px;
+  margin: 10px;
+  margin-top: 40px;
+  box-shadow: 0px 0px 30px rgba(84, 83, 83, 0.2);
+  background-color: rgb(255, 255, 255);
+  color: #2a2929;
+}
+
+.collection button {
+  background-color: transparent;
+  margin-left: 200px;
+  margin-top: 50px;
+  transition: all 0.5s;
+}
+
+.collection button a {
+  color: black;
+}
+
+.collection button:hover {
+  background-color: #2a2929;
+}
+
+.collection button:hover a {
+  color: rgb(255, 255, 255);
+}
+
+/* our product */
+.main-box {
+  position: relative;
+}
+
+.main-box:hover .second-img {
+  width: 100%;
+  height: 100%;
+  right: 0px;
+  bottom: 0px;
+}
+
+.first-img {
+  position: absolute;
+}
+
+.second-img {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  z-index: 9;
+  border: 3px solid white;
+  right: 5px;
+  bottom: -300px;
+  transition: all 0.5s;
+}
+
+.our-product img {
+  width: 100%;
+  /* transition: all 0.5s; */
+
+}
+
+.our-product {
+  margin-top: 30px;
+}
+
+.our-product p {
+  margin-left: 110px;
+  letter-spacing: 1px;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: 600;
+  margin-top: 10px;
+  color: rgb(34, 33, 33);
+}
+
+.our-product h4 {
+  margin-left: 70px;
+  letter-spacing: 1px;
+  font-size: 18px;
+  font-family: sans-serif;
+  font-weight: 500;
+  margin-top: 20px;
+  color: rgb(34, 33, 33);
+}
+
+.tr-icon i {
+  color: #f9bb00;
+}
+
+.tr-icon {
+  margin-left: 90px;
+  margin-top: 10px;
+}
+
+/* airbuds */
+.airbuds-bg {
+  background-image: url(../img/airbuds-bg.jpg);
+  margin-top: 50px;
+  background-size: cover;
+}
+
+.airbuds img {
+  width: 80%;
+  padding: 60px;
+}
+
+.airbuds .w-50 h1 {
+  color: white;
+  font-size: 50px;
+  font-family: sans-serif;
+  font-weight: 500;
+  margin-top: 150px;
+}
+
+.airbuds .w-50 p {
+  color: white;
+  font-size: 18px;
+  margin-top: 20px;
+  letter-spacing: 1px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.airbuds-btn button {
+  background-color: #f9bb00;
+  border: none;
+  border-radius: 0px;
+  letter-spacing: 1px;
+}
+
+/* recent */
+.w-33 img {
+  width: 100%;
+  /* margin-bottom:25px ;
+  margin-left: 20px; */
+  transition: all 0.5s;
+  overflow: hidden;
+}
+
+/* .w-33 img:hover{
+  transform: scale(1.1);
+} */
+.recent-news {
+  margin-top: 60px;
+}
+
+.recent-news .recent-img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.recent-news img:hover {
+  transform: scale(1.1);
+}
+
+.recent-title h2 {
+  font-family: sans-serif;
+  font-weight: 500;
+  margin-top: 40px;
+  text-align: center;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(158, 157, 157, 0.466);
+}
+
+.recent-news .w-33 h1 {
+  font-family: sans-serif;
+  font-weight: 500;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.recent-news .w-33 p {
+  font-family: sans-serif;
+  font-weight: 500;
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.recent button {
+  background-color: #2a2929;
+  border-radius: 0px;
+  margin-left: 130px;
+  margin-bottom: 30px;
+}
+
+.recent button a {
+  color: white;
+}
+
+/* facility */
+.icon h2 {
+  /* color:#555454; */
+  font-size: 30px;
+  color: #ffffff;
+  font-weight: 500;
+  margin-right: 300px;
+}
+
+.facility-content h3 {
+  font-family: sans-serif;
+  font-weight: 500;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+.facility-content p {
+  font-family: sans-serif;
+
+  font-weight: 500;
+  margin-top: 5px;
+  color: gray;
+}
+
+.facility-main {
+  border: 1px solid rgb(200, 196, 196);
+  margin-bottom: 60px;
+  margin-top: 50px;
+  padding: 30px;
+}
+
+.facility-main .icon {
+  transition: all 0.8s;
+}
+
+.facility-main:hover .icon {
+  transform: rotateY(360deg) scale(1.4);
+}
+
+/* footer */
+.footer {
+  background-color: #2a2929;
+  color: white;
+  /* margin-top: 80px; */
+}
+
+.w-30 .add {
+  margin-top: 40px;
+}
+
+.bg-color {
+  background-color: rgb(0, 0, 0);
+  color: aliceblue;
+}
+
+.social {
+  margin-top: 40px;
+  margin-right: 10px;
+
+}
+
+.footer .add2 {
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  text-align: center;
+  padding-top: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+.footer .add2 i {
+  color: #2a2929;
+}
+
+.footer .add h2 {
+  font-size: 35px;
+  font-weight: 500;
+  padding-bottom: 30px;
+}
+
+.footer .link {
+  margin-left: 50px;
+  margin-bottom: 30px;
+}
+
+.footer .add p {
+  font-size: 16px;
+  padding-bottom: 20px;
+  font-weight: 300;
+  font-family: sans-serif;
+}
+
+.footer .add i {
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 40px;
+  margin: 3px;
+
+  transition: all 0.5s;
+  margin-top: 20px;
+}
+
+.footer .link h3 {
+  font-size: 22px;
+  font-weight: 500;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  font-family: sans-serif;
+}
+
+.footer .link li {
+  padding: 10px;
+}
+
+.footer .link li a {
+  color: white;
+  padding-left: 10px;
+  font-size: 18px;
+
+}
+
+.padding-20 {
+  margin-bottom: 50px;
+}
+
+.signup-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.main-signup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.main-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

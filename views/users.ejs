@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>users</title>
+  <style>
+    .content-div {
+      width: 70%;
+      margin-left: 20px;
+      margin-top: 30px;
+    }
+
+    img {
+      margin-left: 30px;
+      margin-top: 20px;
+    }
+
+    #box h3 {
+      font-family: sans-serif;
+      margin-left: 50px;
+      padding: 5px;
+      color: rgb(88, 85, 85);
+    }
+
+    #box h4 {
+      font-family: sans-serif;
+      margin-left: 50px;
+      padding: 5px;
+      color: rgba(88, 85, 85, 0.716);
+    }
+
+    #box {
+      display: flex;
+      flex-wrap: wrap;
+      padding-bottom: 25px;
+      padding-top: 10px;
+    }
+
+    #box button {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <%- include('nav') %>
+    <div class="container">
+      <h1>Your Products:</h1>
+      <div id="box"></div>
+    </div>
+    <%- include('footer') %>
+</body>
+<script>
+  const display = (data) => {
+    document.getElementById("box").innerHTML = "";
+    data.map((ele) => {
+      let img = document.createElement("img");
+      img.src = ele.img;
+      img.style.width = "200px";
+
+      let title = document.createElement("h3");
+      title.innerHTML = ele.title;
+
+      let price = document.createElement("h4");
+      price.innerHTML = `$ ${ele.price}`;
+
+      // Create Delete Button
+      let deleteBtn = document.createElement("button");
+      deleteBtn.innerHTML = "Delete";
+      deleteBtn.onclick = () => deleteProduct(ele._id);
+      let div = document.createElement("div");
+      div.append(img, title, price, deleteBtn);
+      document.getElementById("box").append(div);
+    });
+  };
+
+  // Function to call the delete API
+  const deleteProduct = (productId) => {
+    fetch(`/product/delete/${productId}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Deleted product:", data);
+        get();
+      })
+      .catch((err) => console.log(err));
+  };
+
+  // Fetch and display products
+  const get = () => {
+    fetch(`/product/admin`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        display(data);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  get();
+</script>
+
+</html>

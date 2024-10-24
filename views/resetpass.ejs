@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <%- include("nav") %>
+        <section id="lform">
+            <div class="container">
+                <h1>Forgot Password</h1>
+                <form action="/user/forgotpass" method="post">
+                    <input type="text" name="newpassword" placeholder="Enter your new Password" required>
+                    <input type="text" name="confrompassword" placeholder="Enter your confirm password" required>
+                    <button type="submit">Change Password</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- footer section  -->
+        <%- include("footer") %>
+</body>
+
+</html>

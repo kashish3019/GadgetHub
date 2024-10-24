@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>home</title>
+  <link rel="stylesheet" href="/css/indx.css">
+  <style>
+    .content-div {
+      width: 80%;
+      margin-left: 30px;
+      margin-top: 30px;
+    }
+
+    #box h2 {
+      font-size: 20px;
+      font-family: sans-serif;
+      font-weight: 300;
+      color: #4c4c4c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #box h3 {
+      font-family: sans-serif;
+      color: rgb(239, 38, 38);
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 20px;
+    }
+
+    #part1 {
+
+      font-size: 20px;
+      margin-top: 60px;
+
+    }
+
+    #lth,
+    #htl,
+    #all,
+    #mobiles,
+    #camera,
+    #smartwatch,
+    #notebook,
+    #headphones,
+    #earbuds,
+    #other {
+      background-color: transparent;
+      color: #7e7c7c;
+      border: none;
+      margin: 0;
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    #box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding-top: 20px;
+      width: 100%;
+    }
+
+    .list h3 {
+      font-family: sans-serif;
+      font-size: 20px;
+      margin-left: 20px;
+      margin-top: 40px;
+      font-weight: 300;
+      margin-bottom: 10px;
+      color: #2a2929;
+    }
+
+    .filter-price h3 {
+      font-family: sans-serif;
+      font-size: 20px;
+      margin-left: 20px;
+      margin-top: 20px;
+      color: #2a2929;
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+
+    .content-div h1 {
+      font-size: 20px;
+      font-family: sans-serif;
+      font-weight: 400;
+      margin-left: 30px;
+      letter-spacing: 1px;
+    }
+
+    .content-div img {
+      width: 100%;
+    }
+
+    .sticky-part {
+      position: sticky;
+      top: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <%- include('nav') %>
+    <div class="container">
+      <div class="row">
+        <div id="part1">
+          <div class="sticky-part">
+            <div id="srch">
+              <i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Search" id="search">
+            </div>
+            <div class="list">
+              <h3>Product type</h3>
+              <div id="srch"> </div>
+              <button id="all" value="all">AllProduct</button>
+              <br />
+              <button value="earbuds" id="earbuds">Earbuds</button>
+              <br />
+              <button value="mobiles" id="mobiles">Mobiles</button>
+              <br />
+              <button value="smartwatch" id="smartwatch">smartwatch</button><br />
+              <button value="notebook" id="notebook">Notebook</button>
+              <br />
+              <button value="camera" id="camera">Camera</button>
+              <br />
+              <button value="headphones" id="headphones">Headphones</button>
+              <br />
+              <button value="other" id="other">other</button>
+              <br />
+            </div>
+            <div class="filter-price">
+              <h3>Sort By</h3>
+              <div id="srch"></div>
+              <button id="lth">Low to High</button><br />
+              <button id="htl">High to Low</button><br />
+            </div>
+          </div>
+        </div>
+        <div class="content-div row">
+          <h1>New product(10)</h1>
+          <img src="/img/product-banner.jpg" alt="">
+          <div id="box"></div>
+        </div>
+
+      </div>
+    </div>
+    <%- include('footer') %>
+</body>
+<script>
+  // const handlecart = (id) => {
+  //   console.log(id);
+  //   fetch("/product/cart", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({ productID: id }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => console.log(data));
+  // };
+
+  fetch("/product")
+    .then((response) => response.json())
+    .then((response) => display(response))
+    .catch((error) => console.log(error));
+
+  const display = (data) => {
+    console.log(data);
+    document.getElementById("box").innerHTML = "";
+    data.map((ele) => {
+
+      if (ele.item) {
+        ele = ele.item
+      }
+      let img = document.createElement("img");
+      img.src = ele.img;
+      img.style.width = "265px";
+      img.style.height = "300px";
+      let title = document.createElement("h2");
+      title.innerHTML = ele.title;
+      let price = document.createElement("h3");
+      price.innerHTML = `₹ ${ele.price}`;
+      // let desc = document.createElement("p");
+      // desc.innerHTML = ele.desc;
+      // let category = document.createElement("h3");
+      // category.innerHTML = ele.category;
+      // let size = document.createElement("h4");
+      // size.innerHTML = ele.size;
+      // let btn1 = document.createElement("button");
+      // btn1.setAttribute("class", "hbtn");
+      // btn1.innerHTML = "Add to Cart";
+      // btn1.addEventListener("click", () => {
+      //   handlecart(ele._id);
+      // });
+      let div = document.createElement("div");
+      div.append(img);
+      div.addEventListener("click", () => {
+        window.location.href = `/product/singlepage/${ele._id}`
+      })
+      document.getElementById("box").append(div);
+      let div2 = document.createElement("div");
+      div2.append(title, price);
+      document.getElementById("box").append(div2);
+      let div3 = document.createElement("div");
+      div3.append(div, div2);
+      document.getElementById("box").append(div3);
+    });
+  };
+
+  const allproducts = (alldata) => {
+    fetch(`/product/allproduct`)
+      .then((response) => response.json())
+      .then((response) => display(response))
+      .catch((error) => console.log(error))
+  }
+
+  const filterdata = (uifilter) => {
+    fetch(`/product/filter?category=${uifilter}`)
+      .then((response) => response.json())
+      .then((response) => display(response))
+      .catch((error) => console.log(error))
+  }
+
+  document.getElementById("all").addEventListener("click", () => allproducts("all"))
+  document.getElementById("earbuds").addEventListener("click", () => filterdata("earbuds"))
+  document.getElementById("mobiles").addEventListener("click", () => filterdata("mobile"))
+  document.getElementById("smartwatch").addEventListener("click", () => filterdata("smartwatch"))
+  document.getElementById("notebook").addEventListener("click", () => filterdata("notebook"))
+  document.getElementById("camera").addEventListener("click", () => filterdata("camera"))
+  document.getElementById("headphones").addEventListener("click", () => filterdata("headphones"))
+  document.getElementById("other").addEventListener("click", () => filterdata("other"))
+  document.getElementById("search").addEventListener("input", () => {
+    search()
+  })
+
+  // serach
+
+  const search = () => {
+    let value = document.getElementById("search").value
+    fetch(`/product/search?query=${value}`)
+      .then((data) => data.json())
+      .then((res) => display(res))
+  }
+
+  let input = document.getElementById("search").value
+
+  const pricefilter = (sortprice) => {
+    fetch(`/product/sort?sort=${sortprice}`)
+      .then((response) => response.json())
+      .then((response) => display(response))
+      .catch((error) => console.log(error))
+  }
+
+  document.getElementById("lth").addEventListener("click", () => pricefilter("lth"))
+  document.getElementById("htl").addEventListener("click", () => pricefilter("htl"))
+
+
+
+</script>
+
+</html>
